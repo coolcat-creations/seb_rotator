@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="template" version="2.5" method="upgrade">
+	<name>seb_rotator</name>
+	<author>Elisa</author>
+	<authorEmail>contact@seblod.com</authorEmail>
+	<authorUrl>http://www.seblod.com</authorUrl>
+	<copyright>Copyright (C) 2013 SEBLOD. All Rights Reserved.</copyright>
+	<license>GNU General Public License version 2 or later.</license>
+	<creationDate>January 2011</creationDate>
+	<description>SEBLOD 3.x - www.seblod.com // by Octopoos - www.octopoos.com</description>
+	<version>3.0.0</version>
+	
+	<files>
+		<folder>css</folder>
+		<folder>fields</folder>
+		<folder>images</folder>
+		<folder>includes</folder>
+		<folder>languages</folder>
+		<folder>positions</folder>
+		<folder>variations</folder>
+		
+		<filename>config.php</filename>
+		<filename>index.php</filename>
+		<filename>template_picker.png</filename>
+		<filename>template_preview.png</filename>
+		<filename>template_thumbnail.png</filename>
+		<filename>templateDetails.xml</filename>
+		<filename>index.html</filename>
+	</files>
+	
+	<languages folder="languages">
+		<language tag="en-GB">en-GB/en-GB.tpl_seb_one.ini</language>
+		<language tag="fr-FR">fr-FR/fr-FR.tpl_seb_one.ini</language>
+	</languages>
+	
+<positions>
+		<position>element</position>
+		<position>hidden</position>
+	</positions>
+
+<config addfieldpath="/libraries/cck/construction/field">
+    <fields name="params">
+
+		<fieldset name="main">
+		 	
+		 	<field name="text_mainid" type="text" default="owl-example" label="Unique ID*" description="Type in a unique id for multiple use on one page" filter="" />
+
+			<field name="owl_cssjs" type="list" default="0" label="Remove OWL CSS/JS" description="Select this if you want to prevent loading maintheme and js twice - for example if you use multiple rotators on one site - leave at least one to - No - " >
+          	<option value="0">No</option>
+          	<option value="1">Yes</option>
+			</field>
+
+			<field name="owl_responsive" type="list" default="true" label="Responsive"	description="Set to - No - if you don´t want a responsive behaviour" >
+         	<option value="false">No</option>
+          	<option value="true">Yes</option>
+			</field>
+
+			<field name="owl_items" type="list" default="5" label="Items per Page" description="Set the items per page" class="inputbox">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>
+			</field>
+
+		</fieldset>
+
+
+		<fieldset name="title">
+ 			<field name="text_title" type="text" default="" label="Show h3 inside the rotator" description="" filter="" />
+			<field name="titlecolor" type="color" default="#000000" label="Title Color" description="Set the Color of the Title - for example #000" filter="" />
+   		</fieldset>
+
+   	   <fieldset name="Corners">
+			
+			 <field name="corners" type="list" default="1" label="Display Corners" description="display special corners arround the rotator" class="inputbox">
+				<option value="0">No</option>
+				<option value="1">Yes</option>
+			</field>
+
+			<field name="cornercolor" type="color" default="#000000" label="Corner Color" description="#fff" filter="" />
+
+		</fieldset>
+
+	<fieldset name="Speed">
+
+		<field name="slidespeed" type="text" default="200" label="Slide speed in ms" description="Set the slide speed here as integer in ms" filter="int" />
+		<field name="paginationspeed" type="text" default="800" label="Pagination Speed" description="Set the pagination speed here as integer in ms" filter="int" />
+		<field name="rewindSpeed" type="text" default="1000" label="Rewind Speed" description="Set the rewind speed here as integer in ms" filter="int" />
+   		<field name="owl_stophover" type="list" default="true" label="Stop on Hover" description="If you want, to stop the rotator on hove set Yes" class="inputbox">
+			<option value="false">No</option>
+			<option value="true">Yes</option>
+		</field>
+		<field name="owl_autoplay" type="list" default="true" label="Autoplay" description="Start the slideshow automaticly" class="inputbox">
+			<option value="false">No</option>
+			<option value="true">Yes</option>
+		</field>
+		<field name="owl_scrollpage" type="list" default="true" label="Scroll Page" description="Scroll per page not per item. This affect next/prev buttons and mouse/touch dragging." class="inputbox">
+			<option value="false">No</option>
+			<option value="true">Yes</option>
+		</field>
+	</fieldset>
+
+
+	<fieldset name="Images">
+
+		<field name="lazyload" type="list" default="0" label="Lazy Load Images" description="Delays loading of images. Images outside of viewport wont be loaded before user scrolls to them." >
+          <option value="false">No</option>
+          <option value="true">Yes</option>
+		</field>
+
+		<field name="owl_itemsscaleup" type="list" default="true" label="Skale up" description="Scales the images to fit in full width" class="inputbox">
+			<option value="false">No</option>
+			<option value="true">Yes</option>
+		</field>
+	</fieldset>
+
+	<fieldset name="navigation">
+		<field name="owl_navigation" type="list" default="true" label="Navigation" description="Select if you want the show the Navigation" >
+          <option value="false">No</option>
+          <option value="true">Yes</option>
+		</field>
+		<field name="nav_prev" type="text" default="«" label="Previous Nav Text" description="You can use html if you want" filter="" />
+		<field name="nav_next" type="text" default="»" label="Next Nav Text" description="You can use html if you want" filter="" />
+		<field name="owl_pagination" type="list" default="true" label="Display Pagination" description="Display pagination dots below the rotator" class="inputbox">
+			<option value="false">No</option>
+			<option value="true">Yes</option>
+		</field>
+
+		<field name="owl_paginationnumber" type="list" default="false" label="Display Numbers" description="Display Slidenumber inside of the pagination" class="inputbox">
+			<option value="false">No</option>
+			<option value="true">Yes</option>
+		</field>
+	</fieldset>
+
+    </fields>
+  </config>
+
+</extension>
