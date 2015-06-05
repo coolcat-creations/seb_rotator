@@ -159,7 +159,6 @@ div.rightcorner_r  {
 <!-- owl carousel settings -->
 
 <script>
-$.noConflict();
 
 <?php if ($lazyload=="true"): ?>
 
